@@ -94,10 +94,11 @@ with col1:
     st.header("População Total")
     st.subheader('População Residente')
     col1.plotly_chart(fig_ano)
-    footer_html = """<div style='text-align: left;'>
-    <p>Fonte: IBGE CENSO; IBGE Estimativas populacionais</p>
-    </div>"""
-    st.markdown(footer_html, unsafe_allow_html=True)
+footer_html = """<div style='text-align: left;'>
+
+<p>Fonte: IBGE CENSO; IBGE Estimativas populacionais</p>
+</div>"""
+st.markdown(footer_html, unsafe_allow_html=True)
 
 fig_proporcao = px.area(proporcoes_filtered, x='Ano',y='Proporção', color='Região Imediata', labels={'Proporção':'Proporção'}, category_orders={'Região Imediata': order})
 fig_proporcao.update_layout(yaxis_tickformat='.1%',  # Formatar como porcentagens
@@ -107,10 +108,7 @@ with col2:
     st.header('Proporção da população')
     st.subheader('População por Regiões Imediatas da UF')
     col2.plotly_chart(fig_proporcao)
-    footer_html = """<div style='text-align: left;'>
-    <p>Fonte: IBGE CENSO; IBGE Contagem da população; IBGE Estimativas populacionais</p>
-    </div>"""
-    st.markdown(footer_html, unsafe_allow_html=True)
+
 st.markdown("---")
 col3 = st.columns(1)[0]  # Acesso à única coluna na segunda linha
 
@@ -121,7 +119,7 @@ with col3:
 st.markdown("---")
 col4 = st.columns(1)[0]  # Acesso à única coluna na segunda linha
 with col4:
-    st.header("Taxa de Frequencia escolar Líquida")
+    st.header("Taxa de Frequência escolar Líquida")
     st.subheader("Alunos Matriculados na idade certa")
     st.dataframe(freq_liq_ftr2)
     footer_html = """<div style='text-align: left;'>
