@@ -103,7 +103,7 @@ fig_proporcao.update_layout(yaxis_tickformat='.1%',  # Formatar como porcentagen
                             yaxis=dict(title='Proporção',  # Título do eixo y
                                        gridcolor='lightgrey'))
 with col2:
-    st.header("Proporção da Região Imediata")
+    st.header("Proporção residente da Região Imediata")
     col2.plotly_chart(fig_proporcao)
     footer_html = """<div style='text-align: left;'>
     <p>Fonte: IBGE CENSO; IBGE Contagem da população; IBGE Estimativas populacionais</p>
@@ -113,13 +113,13 @@ st.markdown("---")
 col3 = st.columns(1)[0]  # Acesso à única coluna na segunda linha
 
 with col3:
-    st.header("Variação populacional e taxa de crescimento anual da população")
-    st.subheader("População em mil habitantes")
+    st.header("População total e taxa de crescimento médio anual da população")
+    st.subheader("População em mil habitantes e taxa média entre os anos em percentual")
     st.dataframe(txa_filtered)
 st.markdown("---")
 col4 = st.columns(1)[0]  # Acesso à única coluna na segunda linha
 with col4:
-    st.header("Taxa de Frequencia Líquida")
+    st.header("Taxa de Frequencia escolar Líquida")
     st.subheader("Alunos Matriculados na idade certa")
     st.dataframe(freq_liq_ftr2)
     footer_html = """<div style='text-align: left;'>
