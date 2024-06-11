@@ -70,7 +70,7 @@ for period, (start_year, end_year) in periods.items():
     if df_txa_pivot.shape[1] == 2:
         # Calcular o CAGR
         num_years = end_year - start_year
-        df_txa_pivot[f'Taxa {period}'] = round((((df_txa_pivot[end_year] / df_txa_pivot[start_year]) ** (1 / num_years)) - 1*100),2)
+        df_txa_pivot[f'Taxa {period}'] = round(((((df_txa_pivot[end_year] / df_txa_pivot[start_year]) ** (1 / num_years)) - 1)*100),2)
         
         # Armazenar o DataFrame no dicionário
         cagr_dataframes[period] = df_txa_pivot.reset_index()
